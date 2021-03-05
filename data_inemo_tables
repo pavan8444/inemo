@@ -1,0 +1,352 @@
+Tables with data:
+
+dbo.MasterDataLog //
+NEK_tblCompanyMast//
+PackingType_Taxes
+[Racknumbers]
+[RM_Count_Ranges] //
+[tbl_BrandName]
+[TBL_FREEZINGTYPE]//
+[TBL_GRADES] //
+[tbl_Location]//
+[TBL_PACKINGSTYLE]
+[tbl_Plant]//
+[TBL_PRODUCTFORM]//
+[Tbl_Roles]//
+[Tbl_Roleservices]//
+[Tbl_ServiceUrls]//
+[Tbl_Soaking]//
+[TBL_SPECIE]//
+[tbl_UserPlants]//
+[TBL_VARIETY]//
+
+DROP TABLE IF EXISTS TBL_VARIETY;
+CREATE EXTERNAL TABLE IF NOT EXISTS TBL_VARIETY (
+ VAREITY_ID int,
+VARIETYNAME string,
+DESCRIPTION string,
+CREATEDBY string,
+CREATEDDATE DATE,
+MODIFIEDBY string,
+MODIFIEDDATE DATE,
+Doc_VarietyId string,
+Doc_VarietyName string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+DROP TABLE IF EXISTS tbl_UserPlants;
+CREATE EXTERNAL TABLE IF NOT EXISTS tbl_UserPlants (
+ID int,
+UserId string,
+PlantId string,
+CreatedDate timestamp,
+CreatedBy string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+DROP TABLE IF EXISTS TBL_SPECIE;
+CREATE EXTERNAL TABLE IF NOT EXISTS TBL_SPECIE (
+SPECIE_ID int,
+SPECIE_NAME string,
+DESCRIPTION string,
+CREATEDBY string,
+CREATEDDATE timestamp,
+MODIFIEDBY string,
+MODIFIEDDATE timestamp,
+Doc_SpecieId string,
+Doc_SpecieName string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+DROP TABLE IF EXISTS Tbl_Soaking;
+CREATE EXTERNAL TABLE IF NOT EXISTS Tbl_Soaking (
+Id int,
+Soaking_Code string,
+Soaking_name string,
+Created_date timestamp,
+Created_By string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+DROP TABLE IF EXISTS Tbl_ServiceUrls;
+CREATE EXTERNAL TABLE IF NOT EXISTS Tbl_ServiceUrls (
+Id int,
+ServiceName string,
+Url string,
+CSSClass string,
+ParentId string,
+Priority string,
+Login string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+DROP TABLE IF EXISTS Tbl_Roleservices;
+CREATE EXTERNAL TABLE IF NOT EXISTS Tbl_Roleservices (
+RoleId int,
+ServiceId string,
+Createddate timestamp,
+Createdby string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+DROP TABLE IF EXISTS Tbl_Roles;
+CREATE EXTERNAL TABLE IF NOT EXISTS Tbl_Roles (
+Id int,
+Role_name string,
+Status string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+DROP TABLE IF EXISTS TBL_PRODUCTFORM;
+CREATE EXTERNAL TABLE IF NOT EXISTS TBL_PRODUCTFORM (
+PFORM_ID int,
+PFORM_NAME string,
+CREATEDBY string,
+CREATEDDATE DATE,
+MODIFIEDBY string,
+MODIFIEDDATE DATE,
+Doc_PformId string,
+Doc_PformName string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+
+DROP TABLE IF EXISTS tbl_Plant;
+CREATE EXTERNAL TABLE IF NOT EXISTS tbl_Plant (
+plntid int,
+plntname string,
+plant_Fullname string,
+Shortcode_For_Report string,
+plntlocation string,
+plntaddress string,
+Phones bigint,
+Scan_system string,
+Pallet_Starting_Letter string,
+EmailId string,
+Locationtype string,
+Processor_Code string,
+Pincode bigint,
+Company_Code string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+
+DROP TABLE IF EXISTS TBL_PACKINGSTYLE;
+CREATE EXTERNAL TABLE IF NOT EXISTS TBL_PACKINGSTYLE (
+PACKING_ID int,
+PACKINGSTYLE string,
+DESCRIPTION string,
+CREATEDBY string,
+CREATEDDATE timestamp,
+MODIFIEDBY string,
+MODIFIEDDATE timestamp,
+Doc_PackingId string,
+Doc_PackingStyle string,
+Minimum string,
+Medium string,
+Maximum string,
+Extreme string,
+Required_in_Slabs_forSumreport string,
+Reqiured_In_Packstyle_forSumReport string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+
+
+DROP TABLE IF EXISTS tbl_Location;
+CREATE EXTERNAL TABLE IF NOT EXISTS tbl_Location (
+id int,
+LocationName string,
+isActive string,
+Createdby string,
+CreatedDate timestamp,
+Modifiedby string,
+ModifiedDate timestamp,
+PlantId int
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+DROP TABLE IF EXISTS masterdatalog;
+CREATE EXTERNAL TABLE IF NOT EXISTS masterdatalog (
+id int,
+tablename string, 
+createddate timestamp,
+refno int, 
+status int, 
+remarks string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+DROP TABLE IF EXISTS NEK_tblCompanyMast;
+CREATE EXTERNAL TABLE IF NOT EXISTS NEK_tblCompanyMast (
+companyID int, 
+CompanyCode int, 
+CompanyName string, 
+Address1 string, 
+Address2 string, 
+Address3 string, 
+City string, 
+Country string ,
+ZipCode string, 
+Phone string, 
+FAX string, 
+PAN string, 
+GSTIN string, 
+CINNO string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+DROP TABLE IF EXISTS PackingType_Taxes;
+CREATE EXTERNAL TABLE IF NOT EXISTS PackingType_Taxes (
+ID int, 
+Packing_Type_Id int,
+SGST double, 
+CGST double,
+IGST double, 
+Affect_From timestamp, 
+Affected_To timestamp, 
+Created_Date timestamp
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+DROP TABLE IF EXISTS racknumbers;
+CREATE EXTERNAL TABLE IF NOT EXISTS racknumbers (
+id int,
+rackno string,
+Rack_Capacity float,
+Weight_inKgs float,
+Plantid int,
+Created_Date timestamp,
+Location_Id int
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+DROP TABLE IF EXISTS RM_Count_Ranges;
+CREATE EXTERNAL TABLE IF NOT EXISTS RM_Count_Ranges (
+Id int,
+From_Count float,
+To_Count float,
+Created_Date timestamp
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+DROP TABLE IF EXISTS tbl_BrandName;
+CREATE EXTERNAL TABLE IF NOT EXISTS tbl_BrandName (
+ BRAND_ID int,
+Vendor_Id string,
+BRANDNAME string,
+DESCRIPTION string,
+CREATEDBY string,
+CREATEDDATE timestamp,
+MODIFIEDBY string,
+MODIFIEDDATE timestamp,
+Dummy_barcode string,
+Doc_BrandId int,
+Doc_BrandName string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+DROP TABLE IF EXISTS TBL_FREEZINGTYPE;
+CREATE EXTERNAL TABLE IF NOT EXISTS TBL_FREEZINGTYPE (
+ FZING_ID int,
+FZING_NAME string,
+DESCRIPTION string,
+CREATEDBY string,
+CREATEDDATE timestamp,
+MODIFIEDBY string,
+MODIFIEDDATE timestamp,
+Doc_FreezeId int,
+Doc_FreezeName string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+DROP TABLE IF EXISTS TBL_GRADES;
+CREATE EXTERNAL TABLE IF NOT EXISTS TBL_GRADES (
+ GRADE_ID int,
+GRADENAME string,
+Serial string,
+DESCRIPTION string,
+CREATEDBY string,
+CREATEDDATE timestamp,
+MODIFIEDBY string,
+MODIFIEDDATE timestamp,
+GRADEORDER string,
+Doc_GradeId int,
+Doc_GradeName string,
+Raw_HLCount string,
+Cooked_HLCount string,
+Blanched_HLCount string,
+Glaze_HLCount string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
