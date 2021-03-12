@@ -1,0 +1,280 @@
+Below are the tables inserted on 2021-03-08:
+
+TBL_DAILYPRODUCTIONSHIPMENT
+TBL_ORDERPRODUCTS
+tbl_MainProducts
+tbl_Pallet_Barcode_Register
+tbl_ProductBarcode
+---------------------------------------------------------------------------------
+MasterDataLog
+
+LOAD DATA LOCAL INFILE  'MasterDataLog_202103121141.csv'
+INTO TABLE masterdatalog
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+LOAD DATA LOCAL INFILE  'NEK_tblCompanyMast_202103121141.csv'
+INTO TABLE nek_tblcompanymast
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+----------------------------------------------------------------
+select * from tbl_roleservices  limit 10;
+select count(*) from tbl_roleservices ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/Tbl_Roleservices_202103121149.csv'
+INTO TABLE tbl_roleservices
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_serviceurls  limit 10;
+select count(*) from tbl_serviceurls ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/Tbl_ServiceUrls_202103121149.csv'
+INTO TABLE tbl_serviceurls
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_soaking  limit 10;
+select count(*) from tbl_soaking ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/Tbl_Soaking_202103121149.csv'
+INTO TABLE tbl_soaking
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_brandname  limit 10;
+select count(*) from tbl_brandname ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/tbl_BrandName_202103121149.csv'
+INTO TABLE tbl_brandname
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_location  limit 10;
+select count(*) from tbl_location ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/tbl_Location_202103121149.csv'
+INTO TABLE tbl_location
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_mainproducts  limit 10;
+select count(*) from tbl_mainproducts ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/tbl_MainProducts_202103121150.csv'
+INTO TABLE tbl_mainproducts
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_pallet_barcode_register  limit 10;
+select count(*) from tbl_pallet_barcode_register ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/tbl_Pallet_Barcode_Register_202103121150.csv'
+INTO TABLE tbl_pallet_barcode_register
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_plant  limit 10;
+select count(*) from tbl_plant ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/tbl_Plant_202103121150.csv'
+INTO TABLE tbl_plant
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_productbarcode  limit 10;
+select count(*) from tbl_productbarcode ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/tbl_ProductBarcode_202103121150.csv'
+INTO TABLE tbl_productbarcode
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_userplants  limit 10;
+select count(*) from tbl_userplants ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/tbl_UserPlants_202103121150.csv'
+INTO TABLE tbl_userplants
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_ordprodbarcodes  limit 10;
+select count(*) from tbl_ordprodbarcodes ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/tbl_ordprodbarcodes_202103121150.csv'
+INTO TABLE tbl_ordprodbarcodes
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from packingtype_taxes  limit 10;
+select count(*) from packingtype_taxes ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/PackingType_Taxes_202103121145.csv'
+INTO TABLE packingtype_taxes
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+----------------------------------------------------------------
+select * from rm_count_ranges  limit 10;
+select count(*) from rm_count_ranges ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/RM_Count_Ranges_202103121147.csv'
+INTO TABLE rm_count_ranges
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from racknumbers  limit 10;
+select count(*) from racknumbers ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/Racknumbers_202103121147.csv'
+INTO TABLE racknumbers
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_dailyproductionshipment  limit 10;
+select count(*) from tbl_dailyproductionshipment ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/TBL_DAILYPRODUCTIONSHIPMENT_202103121147.csv'
+INTO TABLE tbl_dailyproductionshipment
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_freezingtype  limit 10;
+select count(*) from tbl_freezingtype ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/TBL_FREEZINGTYPE_202103121147.csv'
+INTO TABLE tbl_freezingtype
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+
+select * from tbl_grades  limit 10;
+select count(*) from tbl_grades ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/TBL_GRADES_202103121147.csv'
+INTO TABLE tbl_grades
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+----------------------------------------------------------------
+select * from tbl_mainorder  limit 10;
+select count(*) from tbl_mainorder ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/TBL_MAINORDER_202103121148.csv'
+INTO TABLE tbl_mainorder
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+----------------------------------------------------------------
+select * from tbl_orderproducts  limit 10;
+select count(*) from tbl_orderproducts ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/TBL_ORDERPRODUCTS_202103121148.csv'
+INTO TABLE tbl_orderproducts
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_packingstyle  limit 10;
+select count(*) from tbl_packingstyle ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/TBL_PACKINGSTYLE_202103121148.csv'
+INTO TABLE tbl_packingstyle
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_productform  limit 10;
+select count(*) from tbl_productform ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/TBL_PRODUCTFORM_202103121148.csv'
+INTO TABLE tbl_productform
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_specie  limit 10;
+select count(*) from tbl_specie ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/TBL_SPECIE_202103121148.csv'
+INTO TABLE tbl_specie
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_users  limit 10;
+select count(*) from tbl_users ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/TBL_USERS_202103121148.csv'
+INTO TABLE tbl_users
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+
+select * from tbl_variety  limit 10;
+select count(*) from tbl_variety ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/TBL_VARIETY_202103121148.csv'
+INTO TABLE tbl_variety
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
+select * from tbl_roles  limit 10;
+select count(*) from tbl_roles ;
+
+LOAD DATA LOCAL INFILE  'mysql_files/Tbl_Roles_202103121149.csv'
+INTO TABLE tbl_roles
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+----------------------------------------------------------------
